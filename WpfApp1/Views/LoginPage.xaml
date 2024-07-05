@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="WpfApp1.Views.LoginPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1.Views"
+             xmlns:resx="clr-namespace:WpfApp1.common.Resources" 
+             xmlns:helpers="clr-namespace:WpfApp1.Helpers" 
+             xmlns:viewmodels="clr-namespace:WpfApp1.ViewModels" 
+             d:DataContext="{d:DesignInstance Type=viewmodels:LoginViewModel}"
+             mc:Ignorable="d" Height="600" Width="800"
+             Background="White">
+    <Grid>
+        <Border BorderBrush="{StaticResource MainBackgroundBrush}" BorderThickness="1" CornerRadius="5"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="530" Width="400">
+            <StackPanel>
+                <Image Source="../common/assets/Logo_MicrosoftAD.png" Margin="0 10" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Line X1="0" X2="400"  Stroke="{StaticResource MainBackgroundBrush}" StrokeThickness="2" HorizontalAlignment="Center" Margin="0,10,0,20" />
+                <TextBlock Text="{x:Static resx:Resources.LoginText}" Padding="20 0" FontSize="15" FontWeight="Bold"/>
+                <TextBlock Text="{x:Static resx:Resources.WelcomeText}" Padding="20 6" FontSize="12" />
+                <Button Style="{StaticResource RoundedButtonStyle}" Height="40" Margin="50 15" BorderBrush="Gray" Background="White" BorderThickness="1" Cursor="Hand">
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Image Source="../common/assets/Logo_MicrosoftAD.png" Height="30" Width="40"/>
+                        <TextBlock Text="Microsft AD" VerticalAlignment="Center" Padding="3" FontWeight="DemiBold"></TextBlock>
+                    </StackPanel>
+
+                </Button>
+                <Grid Margin="0,10,0,10">
+                    <Line X1="200" Stroke="Gray" StrokeThickness="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Border Background="White" HorizontalAlignment="Center" Padding="5,0" CornerRadius="10">
+                        <TextBlock Text="or" FontSize="14" Foreground="Gray" />
+                    </Border>
+                </Grid>
+                <TextBlock Text="{x:Static resx:Resources.UsernameOrEmail}" FontWeight="DemiBold" Padding="20 10 0 0" FontSize="10" />
+                <TextBox  Style="{StaticResource RoundedTextBoxStyle}"  Height="30" Margin="20,5,20,0" Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"/>
+                <Button Background="white" BorderThickness="0" Cursor="Hand" HorizontalAlignment="Right" Margin="5 1 4 10" Height="25">
+                    <TextBlock Text="{x:Static resx:Resources.ForgotPassword}" FontWeight="DemiBold" Padding="10 8 15 8" HorizontalAlignment="Right"  FontSize="10" />
+                </Button>
+                <TextBlock Text="{x:Static resx:Resources.Password}" FontWeight="DemiBold" Padding="20 0" FontSize="10" />
+                
+                <PasswordBox Style="{StaticResource RoundedPasswordBoxStyle}"
+             Height="30" Margin="20,5,20,0"
+             helpers:PasswordBoxHelper.BindPassword="True"
+             helpers:PasswordBoxHelper.BoundPassword="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                
+                <Button Style="{StaticResource RoundedButtonStyle}"  Height="40" Margin="20,55,20,30" Command="{Binding LoginCommand}">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                        <TextBlock Text="{x:Static resx:Resources.LoginButtonText}" VerticalAlignment="Center" FontSize="15"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>
