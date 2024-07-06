@@ -10,6 +10,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="common\static\**" />
+    <EmbeddedResource Remove="common\static\**" />
+    <None Remove="common\static\**" />
+    <Page Remove="common\static\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="common\assets\Logo_MicrosoftAD.png" />
   </ItemGroup>
 
@@ -18,10 +25,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="common\static\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
     <PackageReference Include="Microsoft.Identity.Client" Version="4.61.3" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>

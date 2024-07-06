@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\wpf-learning\combinedLearning\StudyPurpose\WpfApp1\obj\Debug\net8.0-windows\
+D:\wpf-learning\FinalWPF\WpfApp1\obj\Debug\net8.0-windows\
 WpfApp1
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-D:\wpf-learning\combinedLearning\StudyPurpose\WpfApp1\App.xaml
+D:\wpf-learning\FinalWPF\WpfApp1\App.xaml
 2866965346
 
-11208045183
-210-1250601715
+151149709879
+224-216502989
 MainWindow.xaml;Views\LoginPage.xaml;
 
 False

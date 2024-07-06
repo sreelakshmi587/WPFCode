@@ -5,10 +5,15 @@ namespace WpfApp1.Views
     
     public partial class LoginPage:System.Windows.Controls.UserControl
     {
-        public LoginPage()
+        //public LoginPage()
+        //{
+        //    InitializeComponent();
+        //    DataContext = new LoginViewModel();
+        //}
+        public LoginPage(LoginViewModel loginViewModel)
         {
             InitializeComponent();
-            DataContext = new LoginViewModel();
+            DataContext = loginViewModel;
         }
     }
 }
